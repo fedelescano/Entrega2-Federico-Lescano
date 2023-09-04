@@ -1,22 +1,27 @@
 * {
     margin: 0;
     padding:0;
+    
 }
 
 li {
-    list-style: none; /*oculta un elemento*/
+    list-style: none;
 }
 
-a {
-    text-decoration: none;
-    color: black;
+.Titular {
+    display: flex;
+    justify-content: center;
+    background-color: burlywood;
+    border-style:outset;
+    border-color: black;
+    border-radius: 10px;
 }
+
 
 header {
     padding-top: 32px;
-    background-color: bisque;
+    background-color: rgb(236, 231, 225);
 }
-
 
 .navegacion{
     display: grid;
@@ -27,20 +32,20 @@ header {
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
 }
-
 .nav-1{
     grid-area: nav-1;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    
 }
-
-
-.img{
+.img-principal{
     grid-area: img;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction:row;
+    justify-content:center;
+    
+   
 }
 
 main{
@@ -48,33 +53,89 @@ main{
 }
 
 .container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-areas: 
+         "foto1 foto2"
+         "foto3 foto4";
+    grid-template-rows: 50px 50px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 10px;     
 }
 
+
+
+.foto1{
+    grid-area:foto1;
+    display: flex;
+    flex-direction: row;
+    justify-content:center; 
+    border-style:solid;
+    border-color: black;
+    
+    
+}
+
+.foto2{
+    grid-area:foto2;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    border-style:solid;
+    border-color: black;
+   
+}
+.foto3{
+    grid-area:foto3;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    border-style:solid;
+    border-color: black;
+    
+}
+.foto4{
+    grid-area:foto4;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    border-style:solid;
+    border-color: black;
+    
+}
 footer{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: beige;
+    background-color:burlywood;
+    border-style:outset;
+    border-color: black;
+    border-radius: 10px;   
 }
+
+
 
 @media (min-width: 1024px) { 
     .navegacion{
         grid-template-areas:/*Se ubican los elemetos html de nuestra pagina web dentro de una cuadricula*/
         "img nav-1 nav-1 nav-1";
         grid-template-rows: 50px;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        padding: auto;     
     }
     .container{
-        flex-direction: row;
-        gap: 80px;
+        grid-template-areas:
+        "foto1 foto2 foto3 foto4";
+        grid-template-rows: 100px;
+        grid-template-columns: repeat(5, 1fr);
+        margin-left: 10%;
+        padding: 10px;
+                 
     }
     footer{
         flex-direction: row;
         justify-content: space-around;
     }
+  
 }
