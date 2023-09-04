@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding:0;
+}
+
+li {
+    list-style: none; /*oculta un elemento*/
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+header {
+    padding-top: 32px;
+    background-color: bisque;
+}
+
+
+.navegacion{
+    display: grid;
+    grid-template-areas: 
+         "img img img"
+         "nav-1 nav-1 nav-1";
+    grid-template-rows: 50px 50px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.nav-1{
+    grid-area: nav-1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+.img{
+    grid-area: img;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+main{
+    background-color: gray;   
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+}
+
+@media (min-width: 1024px) { 
+    .navegacion{
+        grid-template-areas:/*Se ubican los elemetos html de nuestra pagina web dentro de una cuadricula*/
+        "img nav-1 nav-1 nav-1";
+        grid-template-rows: 50px;
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .container{
+        flex-direction: row;
+        gap: 80px;
+    }
+    footer{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
